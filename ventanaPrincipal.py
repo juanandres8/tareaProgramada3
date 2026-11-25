@@ -14,11 +14,26 @@ def mostrarVentanaPrincipal(personas):
     """
     ventana=tk.Tk()
     ventana.title("Tribunal Supremo de Elecciones")
-    ventana.geometry("450x350")
+    ventana.geometry("450x400")
     titulo=tk.Label(
         ventana,text="Tribunal Supremo de Elecciones",font=("Arial", 16, "bold"))
     titulo.pack(pady=20)
     total=tk.Label(
         ventana,text="Total de personas: "+str(len(personas)))
     total.pack(pady=5)
+    botonRegistrar=tk.Button(
+        ventana,text="Registrar Nacimiento",width=25,state="disabled")
+    botonRegistrar.pack(pady=5)
+    botonArbol=tk.Button(
+        ventana,text="Mostrar árbol genealógico",width=25,state="disabled")
+    botonArbol.pack(pady=5)
+    botonCertificado=tk.Button(
+        ventana,text="Certificado de Nacimiento",width=25,state="disabled")
+    botonCertificado.pack(pady=5)
+    botonReportes=tk.Button(
+        ventana,text="Reportes",width=25,state="disabled")
+    botonReportes.pack(pady=5)
+    botonSalir=tk.Button(
+        ventana,text="Salir",width=25,command=ventana.destroy)
+    botonSalir.pack(pady=5)
     ventana.mainloop()
