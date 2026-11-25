@@ -5,6 +5,7 @@
 
 #Importaciones
 from archivos import cargarPersonas
+import registro
 #Funciones
 personas=cargarPersonas()
 print("Total de personas:",len(personas))
