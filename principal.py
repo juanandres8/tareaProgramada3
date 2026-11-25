@@ -5,9 +5,9 @@
 
 #Importaciones
 from archivos import cargarPersonas
+from ventanaPrincipal import mostrarVentanaPrincipal
 import registro
 #Funciones
-personas=cargarPersonas()
-print("Total de personas:",len(personas))
-for persona in personas:
-    print(persona.nombreCompleto)
+if registro.accesoAutorizado:
+    personas=cargarPersonas()
+    mostrarVentanaPrincipal(personas)

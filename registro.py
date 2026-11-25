@@ -8,6 +8,7 @@ from tkinter import messagebox
 import re
 import os
 
+accesoAutorizado=False
 # Funciones
 def limpiar():
     """
@@ -76,6 +77,7 @@ def ingresar():
     Entrada: No recibe parámetros.
     Salida: No retorna valores.
     """
+    global accesoAutorizado
     usuario = cajaUsuario.get().strip()
     contrasena = cajaContrasena.get()
     if usuario == "" or contrasena == "":
@@ -85,6 +87,7 @@ def ingresar():
     elif not validarContrasena(contrasena):
         messagebox.showerror( "Error","La contraseña debe tener entre 5 y 15 caracteres,\n""al menos una letra y un número.")
     elif leerArchivo(usuario, contrasena):
+        accesoAutorizado=True
         messagebox.showinfo("Acceso autorizado","Bienvenido al sistema del Tribunal Supremo de Elecciones." )
         ventana.destroy()
     else:
