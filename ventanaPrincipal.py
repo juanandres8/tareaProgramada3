@@ -5,6 +5,7 @@
 
 #Importaciones
 import tkinter as tk
+from registroNacimiento import *
 #Funciones
 def mostrarVentanaPrincipal(personas):
     """
@@ -21,9 +22,11 @@ def mostrarVentanaPrincipal(personas):
     total=tk.Label(
         ventana,text="Total de personas: "+str(len(personas)))
     total.pack(pady=5)
-    botonRegistrar=tk.Button(
-        ventana,text="Registrar Nacimiento",width=25,state="disabled")
+    #botonRegistrar
+    botonRegistrar = tk.Button(
+        ventana,text="Registrar Nacimiento",width=25,command=lambda: mostrarRegistroNacimiento(ventana, personas))
     botonRegistrar.pack(pady=5)
+    #botonArbol
     botonArbol=tk.Button(
         ventana,text="Mostrar árbol genealógico",width=25,state="disabled")
     botonArbol.pack(pady=5)
