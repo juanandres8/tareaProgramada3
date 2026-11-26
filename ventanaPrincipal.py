@@ -33,9 +33,10 @@ def mostrarVentanaPrincipal(personas):
     botonCertificado=tk.Button(
         ventana,text="Certificado de Nacimiento",width=25,state="disabled")
     botonCertificado.pack(pady=5)
-    botonReportes=tk.Button(
-        ventana,text="Reportes",width=25,state="disabled")
+   #BotonRegistro
+    botonReportes=tk.Button(ventana,text="Reportes",width=25,command=lambda: mostrarReportes(ventana, personas))
     botonReportes.pack(pady=5)
+    
     botonSalir=tk.Button(
         ventana,text="Salir",width=25,command=ventana.destroy)
     botonSalir.pack(pady=5)
