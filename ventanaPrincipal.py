@@ -19,12 +19,18 @@ def mostrarVentanaPrincipal(personas):
     titulo=tk.Label(
         ventana,text="Tribunal Supremo de Elecciones",font=("Arial", 16, "bold"))
     titulo.pack(pady=20)
-    total=tk.Label(
-        ventana,text="Total de personas: "+str(len(personas)))
+    total=tk.Label(ventana,text="Total de personas: "+str(len(personas)))
     total.pack(pady=5)
+    def actualizarTotal():
+        """
+        Funcionalidad:Actualizar la cantidad de personas registradas en la ventana principal.
+        Entrada:No recibe parámetros.
+        Salida:No retorna valores.
+        """
+        total.config(text="Total de personas: "+str(len(personas)))
     #botonRegistrar
     botonRegistrar = tk.Button(
-        ventana,text="Registrar Nacimiento",width=25,command=lambda: mostrarRegistroNacimiento(ventana, personas))
+        ventana,text="Registrar Nacimiento",width=25,command=lambda: mostrarRegistroNacimiento(ventana, personas,actualizarTotal))
     botonRegistrar.pack(pady=5)
     #botonArbol
     botonArbol=tk.Button(
